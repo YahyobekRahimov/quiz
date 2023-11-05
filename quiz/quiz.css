@@ -220,6 +220,18 @@ nav ul li {
   height: 100px;
   background-color: rgb(226, 226, 226);
   z-index: -1;
+  transition: all 0.2s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#optionD,
+#optionA,
+#optionB,
+#optionC {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  font-weight: 600;
 }
 
 .one-option input {
@@ -233,6 +245,9 @@ nav ul li {
 .one-option input:checked ~ .checkmark {
   background-color: var(--yellow);
   color: white;
+  transform: scale(1.2);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 .one-option input {
   position: absolute;
@@ -290,22 +305,32 @@ button {
 
 #next-button {
   color: #fff;
-  font-size: 13.934px;
+  font-size: 1.25rem;
   font-weight: 500;
   background: linear-gradient(95deg, #fcc822 0%, #ffcd2e 100%);
   box-shadow: 0px 5.80569px 23.22276px -6.96683px #fbe18f;
-  padding: 8px 20px;
+  padding: 14px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  transform: scale(1.3);
 }
 
 #next-button:hover {
   background: linear-gradient(95deg, #fac106 0%, #f5c21a 100%);
 }
 
+.submit-button {
+  width: 180px;
+  height: 50px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px #eee !important;
+  background: #016abc !important;
+  color: #fff !important;
+  border: 1px solid #eee !important;
+  box-shadow: 5px 5px 5px #eee;
+}
 .timer-wrapper {
   position: relative;
   display: flex;
