@@ -5,40 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Document</title>
+    <title>Home page</title>
 </head>
 
 <body>
-
-    <!-- Header section -->
-
-    <header class="header">
+    <header>
         <div class="container header__container">
-
+            <img src="./images/logo.svg" alt="logo">
+            <nav class="nav">
+                <ul>
+                    <li><a class="nav-links" href="#">How it works?</a></li>
+                    <li><a class="nav-links" href="#">Features</a></li>
+                    <li><a class="nav-links" href="#">About us</a></li>
+                    <li><a class="login-button" href="#">Login</a></li>
+                </ul>
+            </nav>
         </div>
+        <div class="horizontal-line"></div>
     </header>
-
-    <!-- Main -->
-
     <main>
-        <section class="">
-            <div class="container">
-
+        <div class="container main__container">
+            <div class="left-side">
+                <h1>Learn new concepts for each question</h1>
+                <p class="description">
+                    We help you prepare for exams and quizzes
+                </p>
+                <div class="button-wrapper">
+                    <button class="start-button">
+                        Start solving
+                    </button>
+                </div>
             </div>
-        </section>
-
-        <section class="">
-            <div class="container">
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer__container">
-
+            <img src="./images/hero.png" alt="">
         </div>
-    </footer>
+    </main>
 </body>
+
+<script>
+    const button = document.querySelector('.start-button');
+    button.addEventListener('click', function () {
+        window.location.href = './quiz/quiz.html';
+    });
+</script>
 
 </html>

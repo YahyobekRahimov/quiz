@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./quiz.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header__container">
+            <img src="../images/logo.svg" alt="logo">
+            <nav class="nav">
+                <ul>
+                    <li><a class="nav-links" href="#">How it works?</a></li>
+                    <li><a class="nav-links" href="#">Features</a></li>
+                    <li><a class="nav-links" href="#">About us</a></li>
+                    <li><a class="login-button" href="#">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+    <main>
+        <section class="question-progress">
+            <div class="container question-progress__container">
+                <div class="question">
+                    <div class="question-circle" id="question-1">1</div>
+                    <span id="question-line-1" class="question-line"></span>
+                </div>
+                <div class="question">
+                    <span id="question-line-2" class="question-line"></span>
+                    <div id="question-2" class="question-circle">2</div>
+                    <span id="question-line-2" class="question-line"></span>
+                </div>
+                <div class="question">
+                    <span id="question-line-3" class="question-line"></span>
+                    <div id="question-3" class="question-circle">3</div>
+                    <span id="question-line-3" class="question-line"></span>
+                </div>
+                <div class="question">
+                    <span id="question-line-4" class="question-line"></span>
+                    <div id="question-4" class="question-circle">4</div>
+                    <span id="question-line-4" class="question-line"></span>
+                </div>
+                <div class="question">
+                    <span id="question-line-5" class="question-line"></span>
+                    <div id="question-5" class="question-circle">5</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="question-area">
+            <div class="container question-area__container">
+                <p id="question-output">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit doloribus hic fugiat
+                    inventore repellendus, laboriosam modi voluptatum odio beatae voluptatem?
+                </p>
+            </div>
+        </section>
+
+        <section class="options">
+            <div class="container options__container">
+                <div class="one-option">
+                    <span class="white-text">A.</span>
+                    <input type="radio" name="option" id="option-a">
+                    <span class="checkmark"></span>
+                </div>
+                <div class="one-option">
+                    <span class="white-text">B.</span>
+                    <input type="radio" name="option" id="option-b">
+                    <span class="checkmark"></span>
+                </div>
+                <div class="one-option">
+                    <span class="white-text">C.</span>
+                    <input type="radio" name="option" id="option-c">
+                    <span class="checkmark"></span>
+                </div>
+                <div class="one-option">
+                    <span class="white-text">D.</span>
+                    <input type="radio" name="option" id="option-d">
+                    <span class="checkmark"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="control-buttons">
+            <div class="container control-buttons__container">
+                <button id="previous-button">
+                    <img src="../images/previous.svg" alt="previous">
+                    <span>Previous</span>
+                </button>
+                <div class="timer-wrapper">
+                    <img src="../images/timer.svg" alt="timer">
+                    <span id="timeleft">20</span>
+                </div>
+                <div class="next-skip">
+                    <button id="next-button">
+                        <span>Next</span>
+                        <img src="../images/next.svg" alt="">
+                    </button>
+                </div>
+        </section>
+
+        <section id="score-section">
+            <div class="container score__container">
+                <div class="score-img">
+                    <img src="../images/score-abstract.png" alt="score">
+                    <p>Your score</p>
+                    <span id="score-output">4</span>
+                </div>
+                <button id="complete-button">Complete</button>
+            </div>
+        </section>
+        </div>
+    </main>
+</body>
+
+<script src="./main.js"></script>
+
+</html>

@@ -1,0 +1,387 @@
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/poppins-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v30-latin-regular.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/roboto-v30-latin-500.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-v30-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --yellow: #fcc822;
+  --gray: #e0e0e0;
+  --gray-dark: #828282;
+  --black: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.horizontal-line {
+  height: 0.5px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: var(--gray-dark);
+  position: relative;
+  transition: 0.2s all ease-in;
+}
+
+nav ul a:hover {
+  color: black;
+}
+
+nav ul li {
+  height: 100%;
+}
+
+.nav-links {
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+.nav-links::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  background-color: var(--gray-dark);
+  transform: scale(0);
+  transition: 0.2s all ease-in;
+}
+
+.nav-links:hover::after {
+  transform: scale(1);
+}
+
+.nav ul :nth-child(4) a {
+  padding: 5px 20px;
+  font-size: 1.2rem;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+}
+
+.login-button:hover {
+  background-color: var(--yellow);
+  color: white !important;
+}
+
+/* ! Question progress part */
+
+.question-progress__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+}
+
+.question-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3px solid var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 104%; /* 14.602px */
+  margin-bottom: 11px;
+}
+
+.question-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--yellow);
+}
+
+.question-area {
+  background-color: var(--yellow);
+  color: #fff;
+  font-size: 28.081px;
+  font-weight: 400;
+  line-height: 140%; /* 39.314px */
+  padding: 52px 28px 43px;
+}
+
+.question-area__container {
+  padding-right: 150px;
+  padding-left: 150px;
+}
+.options__container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 33px;
+  margin-bottom: 100px;
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.one-option {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.white-text {
+  width: 200px;
+  display: inline-block;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(226, 226, 226);
+  z-index: -1;
+}
+
+.one-option input {
+  appearance: none;
+}
+
+.one-option:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.one-option input:checked ~ .checkmark {
+  background-color: var(--yellow);
+  color: white;
+}
+.one-option input {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.one-option input::after {
+  content: "";
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.one-option span {
+  padding: 5px;
+}
+
+/* ! Control buttons */
+
+.control-buttons__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+#previous-button {
+  color: #333;
+  font-size: 14.041px;
+  padding: 8px 15px;
+  background: linear-gradient(95deg, #d1d1d1 0%, #d1d1d1 100%);
+  box-shadow: 0px 5.85029px 23.40116px -7.02035px #d1d1d1;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transform: scale(1.2);
+}
+
+#previous-button:hover {
+  background: linear-gradient(95deg, #b3b3b3 0%, #c1c0c0 100%);
+}
+
+.next-skip {
+  display: flex;
+  gap: 40px;
+}
+
+#next-button {
+  color: #fff;
+  font-size: 13.934px;
+  font-weight: 500;
+  background: linear-gradient(95deg, #fcc822 0%, #ffcd2e 100%);
+  box-shadow: 0px 5.80569px 23.22276px -6.96683px #fbe18f;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transform: scale(1.3);
+}
+
+#next-button:hover {
+  background: linear-gradient(95deg, #fac106 0%, #f5c21a 100%);
+}
+
+.timer-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.timer-wrapper img {
+  width: 60px;
+  position: absolute;
+}
+
+.timer-wrapper span {
+  font-size: 1.4rem;
+}
+
+#score-section {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100vh;
+}
+
+.score__container {
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 12;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.score-img img {
+  position: absolute;
+  z-index: -1;
+  transform: scale(1.2);
+}
+
+.score-img p {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.score-img span {
+  font-family: "Roboto";
+  font-size: 11.4rem;
+  font-weight: 700;
+  line-height: 80%;
+}
+
+#complete-button {
+  padding: 13px 40px;
+  background: linear-gradient(95deg, #fcc822 0%, #ffcd2e 100%);
+  box-shadow: 0px 10.45024px 23.22276px -6.96683px #fbe18f;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
