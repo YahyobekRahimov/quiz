@@ -45,6 +45,7 @@
     const button = document.querySelector('.start-button');
     button.addEventListener('click', function () {
         window.location.href = './quiz/quiz.html';
+        localStorage.removeItem('result');
     });
 </script>
 

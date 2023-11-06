@@ -262,12 +262,16 @@ nav ul li {
   position: absolute;
   left: 0;
   top: 0;
+  cursor: pointer;
 }
 
 .one-option span {
   padding: 5px;
 }
-
+#secondsLeft {
+  position: relative;
+  left: 5px;
+}
 /* ! Control buttons */
 
 .control-buttons__container {
@@ -341,12 +345,13 @@ button {
 }
 
 .timer-wrapper img {
-  width: 60px;
+  width: 100px;
   position: absolute;
 }
 
 .timer-wrapper span {
   font-size: 1.4rem;
+  white-space: nowrap;
 }
 
 #score-section {

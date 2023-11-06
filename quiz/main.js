@@ -19,7 +19,9 @@ const QUESTION_CIRCLE_5 = document.getElementById('question-5');
 
 const PREVIOUS_BUTTON = document.getElementById('previous-button');
 const TIME_LEFT = document.getElementById('timeleft');
+const SECONDS_LEFT = document.getElementById('secondsLeft')
 const NEXT_BUTTON = document.getElementById('next-button');
+const COMPLETE_BUTTON = document.getElementById('complete-button');
 
 const SCORE_SECTION = document.getElementById('score-section');
 const SCORE_OUTPUT = document.getElementById('score-output');
@@ -86,13 +88,19 @@ let result = JSON.parse(localStorage.getItem('result')) || [];
 disableOrEnablePreviousButton(questionIndex);
 
 document.addEventListener('DOMContentLoaded', function() {
-    addQuestion(questionIndex);
+    addQuestion(questionIndex, handleCheckedResponse);
+    startTimer();
 });
 
 // ! Listeners
 
 NEXT_BUTTON.addEventListener('click', function() {
     increaseScore(questionIndex, saveToLocalStorage);
+    console.log(questionIndex);
+    if (questionIndex == 4) {
+        submit();
+        return;
+    }
     questionIndex++;
     removeChecked();
     addQuestion(questionIndex, handleCheckedResponse);
@@ -117,7 +125,48 @@ PREVIOUS_BUTTON.addEventListener('click', function() {
     }
 })
 
+COMPLETE_BUTTON.addEventListener('click', function() {
+    window.location.href = '../index.html'
+})
+
 // ! Functions
+
+function startTimer() {
+    let timeLeft = 60 * 2;
+    let timerInterval;
+    timerInterval = setInterval(function() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        if (minutes >= 1) {
+            TIME_LEFT.innerHTML = minutes + ' :';
+            SECONDS_LEFT.innerHTML = seconds;
+        } else {
+            TIME_LEFT.innerHTML = seconds;
+            SECONDS_LEFT.innerHTML = '';
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submit();
+        }
+
+        timeLeft--;
+    }, 1000); // Update every 1 second
+}
+
+
+function submit() {
+    let result = JSON.parse(localStorage.getItem('result')) || [];
+    console.log(result);
+    let score = 0; 
+    result.forEach(element => {
+        if (element.isCorrect == true) {
+            score++;
+        }
+    })
+    SCORE_SECTION.style.display = "block";
+    SCORE_OUTPUT.innerHTML = score;
+}
 
 function removeChecked() {
     RADIO_BUTTONS.forEach(element => {
@@ -190,13 +239,13 @@ function disableOrEnableNextButton(questionIndex) {
         NEXT_BUTTON.style.opacity = '1';
     }
 }
-function addQuestion(questionIndex, handleCheckedResponse) {
+function addQuestion(questionIndex, handleCheckedResponseCallback) {
     QUESTION_OUTPUT.innerHTML = `${QUESTIONS[questionIndex].id}. ${QUESTIONS[questionIndex].question}`;
     OPTION_A.innerHTML = QUESTIONS[questionIndex].optionA;
     OPTION_B.innerHTML = QUESTIONS[questionIndex].optionB;
     OPTION_C.innerHTML = QUESTIONS[questionIndex].optionC;
     OPTION_D.innerHTML = QUESTIONS[questionIndex].optionD;
-    handleCheckedResponse(questionIndex);
+    handleCheckedResponseCallback(questionIndex);
 }
 
 function handleCheckedResponse(questionIndex) {
