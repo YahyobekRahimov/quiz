@@ -160,7 +160,7 @@ nav ul li {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 3px solid var(--yellow);
+  border: 7px solid #bdbdbd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,12 +169,13 @@ nav ul li {
   font-weight: 500;
   line-height: 104%; /* 14.602px */
   margin-bottom: 11px;
+  background-color: #e3e2e2;
 }
 
 .question-line {
   width: 60px;
-  height: 3px;
-  background-color: var(--yellow);
+  height: 7px;
+  background-color: #bdbdbd;
 }
 
 .question-area {

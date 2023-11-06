@@ -46,7 +46,7 @@ const QUESTIONS = [
         optionA: "Array(massiv)",
         optionB: "Symbol",
         optionC: "Object",
-        optionD: "To'g'ri javob yo'q",
+        optionD: "Javob yo'q",
         answer: 'C'
     }, 
     {
@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 NEXT_BUTTON.addEventListener('click', function() {
     increaseScore(questionIndex, saveToLocalStorage);
-    console.log(questionIndex);
     if (questionIndex == 4) {
         submit();
         return;
@@ -205,15 +204,14 @@ function increaseScore(questionIndex, saveToLocalStorage) {
             score++;
             isCorrect = true;
         };
-        saveToLocalStorage(isCorrect, optionIndex, questionIndex);
+        saveToLocalStorage(isCorrect, optionIndex, questionIndex, handleProgressColoring);
     });
 }
 
-function saveToLocalStorage(isCorrect, optionIndex, questionIndex) {
+function saveToLocalStorage(isCorrect, optionIndex, questionIndex, handleProgressColoring) {
     if (result[questionIndex]) {
         result[questionIndex].isCorrect = isCorrect;
         result[questionIndex].optionIndex = optionIndex;
-        console.log('Updated your response');
         localStorage.setItem('result', JSON.stringify(result));
         return;
     }
@@ -221,9 +219,55 @@ function saveToLocalStorage(isCorrect, optionIndex, questionIndex) {
     response.isCorrect = isCorrect;
     response.optionIndex = optionIndex;
     result.push(response);
-    console.log('Added new response');
     localStorage.setItem('result', JSON.stringify(result));
+    handleProgressColoring(questionIndex)
 }   
+
+function handleProgressColoring(questionIndex) {
+    let circle;
+    let lines;
+    let isNodeList = true;
+    if (questionIndex == 0 || questionIndex == 4) {
+        isNodeList = false;
+    }
+    switch (questionIndex) {
+        case 0:
+            circle = QUESTION_CIRCLE_1;
+            lines = QUESTION_LINE_1;
+            break;
+        case 1:
+            circle = QUESTION_CIRCLE_2;
+            lines = QUESTION_LINE_2;
+            break;
+        case 2:
+            circle = QUESTION_CIRCLE_3;
+            lines = QUESTION_LINE_3;
+            break;
+        case 3:
+            circle = QUESTION_CIRCLE_4;
+            lines = QUESTION_LINE_4;
+            break;
+        case 4:
+            circle = QUESTION_CIRCLE_5;
+            lines = QUESTION_LINE_5;
+            break;
+        default:
+            break;
+    }
+    displayColor(circle, lines, isNodeList)
+}
+function displayColor(circle, lines, isNodeList) {
+    if (isNodeList) {
+        lines.forEach(element => {
+            element.style.backgroundColor = 'var(--yellow)';
+        })
+    } else {
+        lines.style.backgroundColor = "var(--yellow)";
+    }
+    circle.style.borderColor = "var(--yellow)";
+    circle.style.backgroundColor = "white";
+}
+
 
 function removeSubmitButton() {
     NEXT_BUTTON.classList.remove('submit-button');
